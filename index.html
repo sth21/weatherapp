@@ -7,6 +7,47 @@
         <link rel="stylesheet" href="style.css">
     </head>
     <body>
-        <p>Test</p>
+        <main>
+            <div id="main-weather-info">
+                <div class="main-weather-info-left">
+                    <h1 class="location">location</h1>
+                    <div class="lower-main-left">
+                        <p class="date">date</p>
+                        <p class="temp">temp</p>
+                        <p class="feels-like">feels like</p>
+                    </div>
+                </div>
+                <div class="main-weather-info-right">
+                    <h1 class="weather">weather</h1>
+                    <img class="weather-icon" src="../src/cloud.png">
+                </div>
+            </div>
+            <div id="extra-weather-info">
+                <div class="high-temp">
+                    <p>High Temp:</p>
+                    <p>90°</p>
+                </div>
+                <div class="low-temp">
+                    <p>Low Temp:</p>
+                    <p>80°</p>
+                </div>
+                <div class="humidity">
+                    <p>Humidity:</p>
+                    <p>90%</p>
+                </div>
+                <div class="air-pressure">
+                    <p>Air Pressure:</p>
+                    <p>1000 psi</p>
+                </div>
+            </div>
+            <div id="data-control">
+                <div id="searchbar">
+                    <input type="text" id="search" name="search" placeholder="Type to Search..." required>
+                    <img src="../src/searchicon.png">
+                </div>
+                <div id="toggle-measure-syst">F°</div>
+            </div>
+        </main>
+        <footer></footer>
     </body>
 </html>
