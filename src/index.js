@@ -5,8 +5,7 @@ import async from './async';
 import DOM from './DOM';
 
 const controller = (() => {
-    const acquireLocation = (event) => {
-        event.preventDefault();
+    const acquireLocation = () => {
         let data = document.getElementById('search').value;
         data = data.split(', ');
         let location;
@@ -36,9 +35,14 @@ const controller = (() => {
 
     };
 
-    const changeLocation = (event) => {
-        const location = acquireLocation(event);
-        const weatherData = async.getWeather(location);
+    const changeLocation = async (event) => {
+        event.preventDefault();
+        DOM.removeError();
+        const location = acquireLocation();
+        const weatherData = await async.getWeather(location);
+        if (weatherData === undefined) {
+            return;
+        }
         DOM.renderMainWeather(weatherData);
         DOM.renderExtraWeather(weatherData);
         DOM.renderForecast(weatherData);
