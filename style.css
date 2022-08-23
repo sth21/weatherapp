@@ -42,7 +42,7 @@ ol, ul {
     height: 100vh;
     width: 100vw;
     font-family: 'Roboto', sans-serif;
-    font-size: 14px;
+    font-size: 13px;
     color: white;
     background: #4b6cb7;  /* fallback for old browsers */
     background: -webkit-linear-gradient(to bottom, #182848, #4b6cb7);  /* Chrome 10-25, Safari 5.1-6 */
@@ -85,12 +85,12 @@ main {
 }
 
 #main-weather-info h1 {
-    font-size: 2rem;
+    font-size: 1.75rem;
 }
 
-.weather-icon, .lower-main-left {
-    height: 60%;
-    width: 60%;
+.weather-icon {
+    width: 100px;
+    height: 100px;
 }
 
 .lower-main-left {
@@ -98,7 +98,11 @@ main {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    text-align: center;
     gap: 15%;
+    line-height: 1.1;
+    width: 80%;
+    height: 80%;
 }
 
 .main-weather-info-left, .main-weather-info-right {
@@ -106,7 +110,7 @@ main {
     flex-direction: column;
     align-items: center;
     height: 80%;
-    width: 80%;
+    width: 90%;
     gap: 10%;
     margin: 20px;
 }
@@ -160,7 +164,7 @@ main {
     border: 1px solid white;
 }
 
-input {
+#search {
     border: none;
     height: 50%;
     width: 70%;
@@ -169,12 +173,20 @@ input {
     color: white;
 }
 
-input:focus {
+#search:focus {
     outline: none;
 }
 
-input::placeholder {
+#search::placeholder {
     color: white;
+}
+
+#submit {
+    height: 15px;
+    width: 15px;
+    padding: 10px;
+    border: 1px solid white;
+    border-radius: 50%;
 }
 
 #toggle-measure-syst {
