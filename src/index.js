@@ -2,7 +2,7 @@
 import states from 'us-state-converter/index';
 import lookup from 'country-code-lookup';
 import async from './async';
-// import DOM from './DOM';
+import DOM from './DOM';
 
 const controller = (() => {
     const acquireLocation = (event) => {
@@ -39,8 +39,11 @@ const controller = (() => {
     const changeLocation = (event) => {
         const location = acquireLocation(event);
         const weatherData = async.getWeather(location);
+        DOM.renderMainWeather(weatherData);
+        DOM.renderExtraWeather(weatherData);
+        DOM.renderForecast(weatherData);
     };
     return { acquireLocation, toggleMeasurementSystem, changeLocation };
 })();
 
-controller.changeLocation();
+document.addEventListener('submit', controller.changeLocation);
