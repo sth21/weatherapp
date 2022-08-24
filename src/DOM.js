@@ -18,8 +18,9 @@ const DOM = (() => {
         return weatherArr.join(' ');
     };
     const formatDate = (weatherData, dateNum) => {
-        let dateTxt = new Date(weatherData.list[dateNum].dt_txt.substring(0, 10)).toString();
-        console.log(dateTxt);
+        let dateTxt = new Date(weatherData.list[dateNum].dt_txt.substring(0, 10));
+        dateTxt.setDate(dateTxt.getDate() + 1);
+        dateTxt = dateTxt.toString();
         dateTxt = dateTxt.substring(4, 15);
         return `${dateTxt.substring(0, dateTxt.length - 4)}, ${dateTxt.substring(dateTxt.length - 4, dateTxt.length)}`;
     };
@@ -48,7 +49,6 @@ const DOM = (() => {
         return iconsrc;
     };
     const renderMainWeather = (weatherData) => {
-        console.log(weatherData);
         const location = document.querySelector('.location');
         location.textContent = `${weatherData.city.name}, ${weatherData.city.country}`;
 

@@ -3,8 +3,7 @@
 import DOM from './DOM';
 
 const async = (() => {
-    const getWeather = async (location) => {
-        const units = 'imperial';
+    const getWeather = async (location, units) => {
         try {
             const response = await fetch(`https://api.openweathermap.org/data/2.5/forecast?q=${location}&units=${units}&appid=220032af2efc25d26fc2e72d3abc3914`, { mode: 'cors' });
             if (response.status !== 200) {

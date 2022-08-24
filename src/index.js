@@ -1,3 +1,7 @@
+/* eslint-disable no-unused-expressions */
+/* eslint-disable no-unused-vars */
+/* eslint-disable prefer-destructuring */
+/* eslint-disable no-param-reassign */
 /* eslint-disable no-undef */
 import states from 'us-state-converter/index';
 import lookup from 'country-code-lookup';
@@ -5,6 +9,7 @@ import async from './async';
 import DOM from './DOM';
 
 const controller = (() => {
+    let measurementUnit = 'imperial';
     const acquireLocation = () => {
         let data = document.getElementById('search').value;
         data = data.split(', ');
@@ -31,15 +36,11 @@ const controller = (() => {
         return location.join(',');
     };
 
-    const toggleMeasurementSystem = () => {
-
-    };
-
     const changeLocation = async (event) => {
         event.preventDefault();
         DOM.removeError();
         const location = acquireLocation();
-        const weatherData = await async.getWeather(location);
+        const weatherData = await async.getWeather(location, measurementUnit);
         if (weatherData === undefined) {
             return;
         }
@@ -48,9 +49,24 @@ const controller = (() => {
         DOM.renderForecast(weatherData);
         document.getElementById('search').value = '';
     };
+
+    const toggleMeasurementSystem = (event) => {
+        let text;
+        (event.target.getAttribute('id') === 'toggle-measure-syst') ? text = event.target.children[0] : text = event.target;
+        if (text.textContent === 'F°') {
+            text.textContent = 'C°';
+            measurementUnit = 'metric';
+        } else {
+            text.textContent = 'F°';
+            measurementUnit = 'imperial';
+        }
+        document.getElementById('search').value = document.querySelector('.location').textContent;
+        document.getElementById('submit').click();
+    };
+
     return { acquireLocation, toggleMeasurementSystem, changeLocation };
 })();
 
 document.addEventListener('submit', controller.changeLocation);
-
+document.getElementById('toggle-measure-syst').addEventListener('click', controller.toggleMeasurementSystem);
 document.getElementById('submit').click();
