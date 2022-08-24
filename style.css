@@ -200,6 +200,14 @@ main {
     border: 1px solid white;
 }
 
+#submit, #toggle-measure-syst {
+    transition: .5s;
+}
+
+#submit:hover, #toggle-measure-syst:hover {
+    transform: scale(1.2);
+}
+
 footer {
     display: grid;
     grid-template: 1fr / repeat(5, 1fr);
