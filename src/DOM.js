@@ -87,9 +87,9 @@ const DOM = (() => {
         const day1img = day1.children[1];
         day1img.src = findIcon(weatherData, 0);
         const day1high = day1.children[2];
-        day1high.textContent = `High: ${weatherData.list[0].main.temp_max}`;
+        day1high.textContent = `High: ${weatherData.list[0].main.temp_max}°`;
         const day1low = day1.children[3];
-        day1low.textContent = `Low: ${weatherData.list[0].main.temp_min}`;
+        day1low.textContent = `Low: ${weatherData.list[0].main.temp_min}°`;
 
         const day2 = document.querySelector('.day-two');
         const day2date = day2.children[0];
@@ -97,9 +97,9 @@ const DOM = (() => {
         const day2img = day2.children[1];
         day2img.src = findIcon(weatherData, 8);
         const day2high = day2.children[2];
-        day2high.textContent = `High: ${weatherData.list[8].main.temp_max}`;
+        day2high.textContent = `High: ${weatherData.list[8].main.temp_max}°`;
         const day2low = day2.children[3];
-        day2low.textContent = `Low: ${weatherData.list[8].main.temp_min}`;
+        day2low.textContent = `Low: ${weatherData.list[8].main.temp_min}°`;
 
         const day3 = document.querySelector('.day-three');
         const day3date = day3.children[0];
@@ -107,9 +107,9 @@ const DOM = (() => {
         const day3img = day3.children[1];
         day3img.src = findIcon(weatherData, 16);
         const day3high = day3.children[2];
-        day3high.textContent = `High: ${weatherData.list[16].main.temp_max}`;
+        day3high.textContent = `High: ${weatherData.list[16].main.temp_max}°`;
         const day3low = day3.children[3];
-        day3low.textContent = `Low: ${weatherData.list[16].main.temp_min}`;
+        day3low.textContent = `Low: ${weatherData.list[16].main.temp_min}°`;
 
         const day4 = document.querySelector('.day-four');
         const day4date = day4.children[0];
@@ -117,9 +117,9 @@ const DOM = (() => {
         const day4img = day4.children[1];
         day4img.src = findIcon(weatherData, 24);
         const day4high = day4.children[2];
-        day4high.textContent = `High: ${weatherData.list[24].main.temp_max}`;
+        day4high.textContent = `High: ${weatherData.list[24].main.temp_max}°`;
         const day4low = day4.children[3];
-        day4low.textContent = `Low: ${weatherData.list[24].main.temp_min}`;
+        day4low.textContent = `Low: ${weatherData.list[24].main.temp_min}°`;
 
         const day5 = document.querySelector('.day-five');
         const day5date = day5.children[0];
@@ -127,9 +127,9 @@ const DOM = (() => {
         const day5img = day5.children[1];
         day5img.src = findIcon(weatherData, 32);
         const day5high = day5.children[2];
-        day5high.textContent = `High: ${weatherData.list[32].main.temp_max}`;
+        day5high.textContent = `High: ${weatherData.list[32].main.temp_max}°`;
         const day5low = day5.children[3];
-        day5low.textContent = `Low: ${weatherData.list[32].main.temp_min}`;
+        day5low.textContent = `Low: ${weatherData.list[32].main.temp_min}°`;
     };
     const switchMeasurement = () => {
 
@@ -138,7 +138,7 @@ const DOM = (() => {
         const dataControl = document.getElementById('data-control');
         const toggleMeasureSyst = document.getElementById('toggle-measure-syst');
         const errorMsg = document.createElement('p');
-        errorMsg.textContent = 'Sorry, we could not find that location.';
+        errorMsg.textContent = 'Sorry, we could not find that city.';
         dataControl.insertBefore(errorMsg, toggleMeasureSyst);
     };
     const removeError = () => {

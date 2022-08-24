@@ -11,7 +11,7 @@
             <div id="main-weather-info">
                 <div class="main-weather-info-left">
                     <h1 class="location">location</h1>
-                    <div class="lower-main-left">
+                    <div class="lower-main">
                         <p class="date">date</p>
                         <p class="temp">temp</p>
                         <p class="feels-like">feels like</p>
@@ -19,7 +19,9 @@
                 </div>
                 <div class="main-weather-info-right">
                     <h1 class="weather">weather</h1>
-                    <img class="weather-icon">
+                    <div class="lower-main">
+                        <img class="weather-icon">
+                    </div>
                 </div>
             </div>
             <div id="extra-weather-info">
@@ -42,7 +44,7 @@
             </div>
             <div id="data-control">
                 <form id="searchbar">
-                    <input type="text" id="search" name="search" placeholder="Type to Search..." required value="Buffalo">
+                    <input type="text" id="search" name="search" placeholder="Search for a city..." required value="Buffalo">
                     <input type="image" alt="submit" id="submit" src="../src/media/searchicon.png">
                 </form>
                 <div id="toggle-measure-syst">
