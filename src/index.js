@@ -46,8 +46,11 @@ const controller = (() => {
         DOM.renderMainWeather(weatherData);
         DOM.renderExtraWeather(weatherData);
         DOM.renderForecast(weatherData);
+        document.getElementById('search').value = '';
     };
     return { acquireLocation, toggleMeasurementSystem, changeLocation };
 })();
 
 document.addEventListener('submit', controller.changeLocation);
+
+document.getElementById('submit').click();
