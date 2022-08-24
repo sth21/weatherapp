@@ -7,6 +7,7 @@ import states from 'us-state-converter/index';
 import lookup from 'country-code-lookup';
 import async from './async';
 import DOM from './DOM';
+import searchIcon from './media/searchicon.png';
 
 const controller = (() => {
     let measurementUnit = 'imperial';
@@ -67,6 +68,7 @@ const controller = (() => {
     return { acquireLocation, toggleMeasurementSystem, changeLocation };
 })();
 
+document.getElementById('submit').src = searchIcon;
 document.addEventListener('submit', controller.changeLocation);
 document.getElementById('toggle-measure-syst').addEventListener('click', controller.toggleMeasurementSystem);
 document.getElementById('submit').click();

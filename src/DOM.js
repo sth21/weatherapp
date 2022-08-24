@@ -9,7 +9,6 @@ import rain from './media/rain.png';
 import thunderstorm from './media/thunderstorm.png';
 import snow from './media/snow.png';
 import mist from './media/mist.png';
-import search from './media/searchicon.png';
 
 const DOM = (() => {
     const formatWeather = (weatherArr) => {
@@ -158,7 +157,5 @@ const DOM = (() => {
         removeError,
     };
 })();
-
-document.getElementById('submit').src = search;
 
 export default DOM;
