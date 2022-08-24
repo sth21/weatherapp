@@ -93,7 +93,7 @@ main {
     height: 100px;
 }
 
-.lower-main-left {
+.lower-main {
     display: flex;
     flex-direction: column;
     justify-content: center;
