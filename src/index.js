@@ -7,7 +7,7 @@ import states from 'us-state-converter/index';
 import lookup from 'country-code-lookup';
 import async from './async';
 import DOM from './DOM';
-import searchIcon from './media/searchicon.png';
+import searchIcon from '../dist/d2062b8b8cc750f6a8bc.png';
 
 const controller = (() => {
     let measurementUnit = 'imperial';
