@@ -68,7 +68,7 @@ const controller = (() => {
     return { acquireLocation, toggleMeasurementSystem, changeLocation };
 })();
 
-document.getElementById('submit').src = searchIcon;
+document.getElementById('submit').setAttribute('src', `${searchIcon}`);
 document.addEventListener('submit', controller.changeLocation);
 document.getElementById('toggle-measure-syst').addEventListener('click', controller.toggleMeasurementSystem);
 document.getElementById('submit').click();
